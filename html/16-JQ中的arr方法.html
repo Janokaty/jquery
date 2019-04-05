@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery.js"></script>
+    <script>
+            $(function(){
+              /*
+               1.attr(name|pro|key,val|fn)
+                  传递一个参数表示获取这个属性的值
+                  传递两个参数表示设置属性的和属性的值
+                  注意：只有一个参数的时候获取到的属性永远是第一个dom节点的属性值
+                       有两个参数的时候，修改的属性是所有dom节点的
+
+               2.removeAttr(name)
+
+              */
+                //console.log($('span').attr('name')); //12
+                //$('span').attr('age','21')  //age=21
+                $('span').removeAttr("name");
+            });
+    </script>
+</head>
+<body>
+<span class="span1" name="12"></span>
+<span class="span2" name="34"></span>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery.js"></script>
+    <script>
+            $(function(){
+                //1.一个一个的直接设置
+                // $("div").css("width","100px");
+                // $("div").css("height","100px");
+                // $("div").css("background","pink");
+
+                //2.链式设置(最多设置三个，避免累赘)
+                //$("div").css("width","100px").css("height","100px").css("background","pink");
+
+                //3.批量设置（推荐）
+                $("div").css({
+                    width:"100px",
+                    height:"100px",
+                    background:"lightblue"
+                })
+            });
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

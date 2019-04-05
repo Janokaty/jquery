@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery.js"></script>
+    <script>
+            $(function(){
+                   //1.事件绑定法一
+                $("button").on("click",function(){
+                    alert("第一种事件绑定的方法")
+                });
+
+                //2.事件绑定法二
+                $("button").click(function(){
+                    alert("这是第二种绑定的方法");
+                });
+                 //3.这是绑定的第三种写法
+                function test1(){
+                    alert("这是第三种写法");
+                }
+                $("button").on("click",test1);
+                //这是解绑的方法（注意，这个解绑，解绑的所有的事件）
+                //$("button").off();
+                //这是指定解绑哪一个
+                $("button").off("click",test1);
+
+            });
+    </script>
+</head>
+<body>
+<button>你点一下我嘛</button>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+    <script src="../jq/jquery.js"></script>
+    <script>
+        /*
+        * 1.什么是事件委托
+        * 别人帮忙做事，做完之后反馈给我
+        *
+        * */
+            $(function(){
+              $("button").click(function(){
+                 $("ul").append('<li>我是新增的li</li>')
+              });
+              /*  //这种方法只能找到已经存在的Li不能找到动态添加上去的li
+                    所以需要事件委托，让ul帮忙完成click事件
+              $('ul>li').click(function(){
+                 alert($(this).html());
+              });
+              */
+              $('ul').delegate('li','click',function(){
+                  alert($(this).html());
+              })
+            });
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是第一个li</li>
+    <li>我是第二个li</li>
+    <li>我是第三个li</li>
+</ul>
+<button>新增一个li</button>
+</body>
+</html>

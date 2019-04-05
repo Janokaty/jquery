@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .left{
+            float: left;
+            position: fixed;
+            left: 0;
+            top:500px;
+            display: none;
+        }
+        .right{
+            float: right;
+            position: fixed;
+            right: 0;
+            top:500px;
+            display: none;
+        }
+    </style>
+    <script>
+            $(function(){
+             $(window).scroll(function(){
+                 var offSet=$("html,body").scrollTop();
+                 console.log(offSet);
+                 if(offSet>=200){
+                    $("img").show(1000);
+                 }else{
+                   $("img").hide(1000);
+                 }
+             })
+            });
+    </script>
+</head>
+<body style="height: 2000px">
+<img src="../img/left.jpeg" height="200" width="200" class="left"/>
+<img src="../img/left.jpeg" height="200" width="200" class="right"/>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 1000px;
+        }
+        .scroll{
+            height: 200px;
+            width: 100px;
+            border: 1px solid black;
+            overflow: auto;
+        }
+    </style>
+    <script>
+                /*$(function(){
+                    var btn=$("button");
+                    $(btn[0]).click(function(){
+                        console.log($(".scroll").scrollTop())
+                    });
+                    $(btn[1]).click(function(){
+                        $(".scroll").scrollTop(500) //该方法接收的不是字符串，而是数字
+                    });
+                });
+                */
+                //如果想设置全局的滚动条，需要搭配html和body使用（注意浏览器的兼容问题）
+                $(function(){
+                    var btn=$("button");
+                    $(btn[0]).click(function(){
+                        console.log($("html").scrollTop()+$("body").scrollTop())
+                    });
+                    $(btn[1]).click(function(){
+                        $(".scroll").scrollTop(500) //该方法接收的不是字符串，而是数字
+                    });
+                });
+
+    </script>
+</head>
+<body>
+<div class="scroll">王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女王心怡是大美女</div>
+<button>获取</button>
+<button>设置</button>
+</body>
+</html>

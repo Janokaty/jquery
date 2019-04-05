@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery.js"></script>
+    <script>
+
+        /*
+        * 1.什么是事件冒泡？
+        * 2.如何阻止事件冒泡
+        *  （1）在儿子的方法里面加return false;
+        *   （2）在儿子里面变成$(".son").click(function(event){
+                   alert("son");
+                   event.stopPropagation();
+               });
+        * 3.什么是默认行为
+        *   （1）<a>点击之后会默认跳转
+        *   （2）表单提交之后也会因为action默认跳转
+        * 4.如何阻止默认行为？
+        * */
+
+            $(function(){
+               // $(".son").click(function(){
+               //     alert("son");
+               //     //return false;
+               // });
+               //  $(".father").click(function(){
+               //      alert("father");
+               //  })
+
+                // $("a").click(function(){
+                //     alert('弹出框');
+                //     return false;
+                // });
+                $("a").click(function(event){
+                    alert('弹出框');
+                    event.preventDefault();
+                })
+            });
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+             background: orangered;
+        }
+        .son{
+            height: 100px;
+            width: 100px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="www.baidu.com">我是百度</a>
+    <form action="http://www.taobao.com">
+        <input type="text">
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

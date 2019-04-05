@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .father{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-left: 50px;
+            border: 50px solid yellow;
+            position: relative;
+        }
+        .son{
+            height: 50px;
+            width: 50px;
+            left: 25px;
+            top: 25px;
+            position: absolute;
+            background: green;
+        }
+    </style>
+    <script src="../jq/jquery.js"></script>
+    <script>
+            $(function(){
+                var div1=$(".father");
+                var div2=$(".son");
+                var btn=$("button");
+               $(btn[0]).click(function(){
+                    //console.log(div1.css('width'));
+                   //console.log(div1.offset().left);
+                   console.log(div2.position().left)
+                });
+                $(btn[1]).click(function(){
+                      // div2.width("200px")
+                });
+            });
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<button>获取</button>
+<button>设置</button>
+</body>
+</html>

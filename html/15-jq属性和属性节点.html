@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery.js"></script>
+    <script>
+        /*
+         1.什么是属性？
+         属性是对象身上保存的变量
+         2.如何操作属性？
+         3.什么是属性节点？
+         <span name="windy"></span>
+         4.怎么操作属性节点？
+          dom元素.setAttribute("属性名",'值');
+          dom元素.getAttribute("属性名")；
+         */
+            $(function(){
+                // function person(){
+                //
+                // }
+                // var p=new person();
+                // p.name='windy';
+                var span=$("span")[0];
+                span.setAttribute("name",'zhang');
+                console.log(span.getAttribute("name"));
+            });
+    </script>
+</head>
+<body>
+<span name=""></span>
+</body>
+</html>

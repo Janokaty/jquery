@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery.js"></script>
+    <script>
+            $(function(){
+              $(".btn").on("click.wxy",function(){
+                  alert("这是我的方法");
+              });
+                $(".btn").on("click.wxy",function(){
+                    alert("这是我的方法2");
+                });
+              $(".btn").on("click.zcy",function(){
+                  alert("这是我妈的方法");
+              });
+              $(".btn").trigger("click.wxy");
+            });
+    </script>
+</head>
+<body>
+<button class="btn">我是一个按钮</button>
+</body>
+</html>

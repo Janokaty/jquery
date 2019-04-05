@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 440px;
+            height: 298px;
+            border: 1px solid #000;
+            margin: 50px auto;
+        }
+        .nav>li{
+            list-style: none;
+            width: 110px;
+            height: 50px;
+            background: orange;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+        }
+        .content>li{
+            list-style: none;
+            display: none;
+        }
+        .nav>.current{
+            background: #cccccc;
+        }
+        .content>.show{
+            display: block;
+        }
+    </style>
+    <script src="../jq/jquery.js"></script>
+    <script>
+            $(function() {
+                //1.监听选项卡的移入事件
+                $(".nav>li").mouseenter(function () {
+                    //1.1修改被选中的li的背景色
+                    $(".nav>li").removeClass("current");
+                    $(this).addClass("current");
+                    //1.2获取当前选项卡的索引
+                    var idx=$(this).index();
+                   // console.log(idx);
+                    $(".content>li").removeClass("show");
+                    $(".content>li").eq(idx).addClass("show")
+                });
+                });
+
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul class="nav">
+        <li class="current">H5+C3</li>
+        <li>jQuery</li>
+        <li>C语言</li>
+        <li>Go语言</li>
+    </ul>
+    <ul class="content">
+        <li class="show"><img src="../img/1.jpg" height="298" width="440"/></li>
+        <li><img src="../img/2.jpg" height="298" width="440"/></li>
+        <li><img src="../img/1.jpg" height="298" width="440"/></li>
+        <li><img src="../img/2.jpg" height="298" width="440"/></li>
+    </ul>
+</div>
+</body>
+</html>
